@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Mali&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Mali', cursive;
+}
+
+.back {
+    background: red; /* For browsers that do not support gradients */
+    background: -webkit-radial-gradient(circle, red, yellow, green); /* Safari */
+    background: -o-radial-gradient(circle, red, yellow, green); /* Opera 11.6 to 12.0 */
+    background: -moz-radial-gradient(circle, red, yellow, green); /* Firefox 3.6 to 15 */
+    background: radial-gradient(circle, red, yellow, green); /* Standard syntax */
+  }
+
+.container {
+    max-width: 1110px;
+    margin: 0 auto;
+}
+
+nav {
+    height: 150px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+nav ul {
+    border-radius: 25px;
+    background: white;
+    padding: 20px;
+    width: 200px;
+    height: 120px;
+    list-style: none;
+    margin-left: 20px;
+    margin-top: 15px;
+    
+}
+nav ul li h1{
+    text-align: center;
+    border-bottom-style: solid;
+    border-color: black;
+    border-width: 2px;
+}
+
+nav ul div{
+    vertical-align: bottom;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.center{
+    align-items: center;
+}
+
+.map {
+    height: 480px;
+    width: 380px;
+    background: url('../img/trang.png') no-repeat;
+    background-position: center bottom;
+    background-size: 380px;
+    margin: auto;
+    margin-top: -20px;
+}
+
+.map a{
+    text-decoration: none;
+    color: #FF0000;
+    font-size: 13px;
+}
+
+.logo {
+    border-radius: 10%;
+    width: 50px;
+    height: 50px;
+    margin-top: 50px;
+    margin-right: 20px;
+}
+
+.logo2 {
+    border-radius: 50%;
+    width: 15%;
+    max-width: 80px;
+    height: auto;
+}
+
+.tab {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.ratsada{
+    background: #FFEDED;
+    border: 2px solid;
+    padding-top: 2px;
+    text-align: center;
+    width: 60px;
+    height: 70px;
+    margin-left: 190px;
+    margin-top: -10px;
+    border-color: black;
+}
+.wangwiset{
+    background: #FFEDED;
+    border: 2px solid;
+    padding-top: 2px;
+    text-align: center;
+    width: 75px;
+    height: 70px;
+    margin-left: 60px;
+    margin-top: 50px;
+    border-color: black;
+    color: #FF0000; 
+}
+
+.trang {
+    background: #FFEDED;
+    border: 2px solid;
+    padding-top: 2px;
+    text-align: center;
+    width: 50px;
+    height: 70px;
+    margin-left: 180px;
+    margin-top: -30px;
+    border-color: black;
+    color: #FF0000;
+}
+
+
+.huaiyod {
+    background: #FFEDED;
+    border: 2px solid;
+    padding-top: 2px;
+    text-align: center;
+    width: 62px;
+    height: 70px;
+    margin-left: 260px;
+    margin-top: -160px;
+    border-color: black;
+    color: #FF0000;
+}
+
+
+.sikao {
+    background: #FFEDED;
+    border: 2px solid;
+    padding-top: 2px;
+    text-align: center;
+    width: 50px;
+    height: 70px;
+    margin-left: 50px;
+    margin-top: 70px;
+    border-color: black;
+    color: #FF0000;
+}
+
+
+.nayong {
+    background: #FFEDED;
+    border: 2px solid;
+    padding-top: 2px;
+    text-align: center;
+    width: 55px;
+    height: 70px;
+    margin-left: 300px;
+    margin-top: -70px;
+    border-color: black;
+    color: #FF0000;
+}
+
+.yantakhao {
+    background: #FFEDED;
+    border: 2px solid;
+    padding-top: 2px;
+    text-align: center;
+    width: 70px;
+    height: 70px;
+    margin-left: 220px;
+    margin-top: -30px;
+    border-color: black;
+    color: #FF0000;
+}
+
+.kantrang {
+    background: #FFEDED;
+    border: 2px solid;
+    padding-top: 2px;
+    text-align: center;
+    width: 63px;
+    height: 70px;
+    margin-left: 120px;
+    margin-top: -70px;
+    border-color: black;
+    color: #FF0000;
+}
+
+.hatsamran {
+    background: #FFEDED;
+    border: 2px solid;
+    padding-top: 2px;
+    text-align: center;
+    width: 73px;
+    height: 70px;
+    margin-left: 180px;
+    margin-top: 50px;
+    border-color: black;
+    color: #FF0000;
+}
+
+.palian {
+    background: #FFEDED;
+    border: 2px solid;
+    padding-top: 2px;
+    text-align: center;
+    width: 50px;
+    height: 70px;
+    margin-left: 300px;
+    margin-top: -80px;
+    border-color: black;
+    color: #FF0000;
+}

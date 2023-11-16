@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content='width=device-width, initial-scale=1' name='viewport'/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LWF</title>
+
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="back">
+
+    <header>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><h1>Trang</h1></li>
+                    <div>
+                    <li style="display: flex;"><p id="day"></p>/<p id="month"></p>/<p id="year"></p></li>
+                    <li>24 Hour</li>
+                </div>
+                </ul>
+
+                <img src="img/icon.jpg" alt="" class="logo">
+                
+            </nav>
+        </div>
+    </header>
+    <div class="center">
+        <div class="map">
+            <div class="ratsada">
+                <a href="ratsada.html"><b>Ratsada</b></a>
+                <a href="ratsada.html"><img id="ratsada" src="no rain.jpg" width="40" height="40"></a>
+            </div>
+            <div class="wangwiset">
+                <a href="wangwiset.html"><b>Wangwiset</b></a>
+                <a href="wangwiset.html"><img id="wangwiset" src="no rain.jpg" width="40" height="40"></a>
+            </div>
+            <a href="trang.html">
+            <div class="trang">
+                <a href="trang.html"><b>Trang</b></a>
+                <a href="trang.html"><img id="mueang" src="no rain.jpg" width="40" height="40"></a>
+            </div>
+            <div class="huaiyod">
+                <a href="huaiyod.html"><b>Huai yod</b></a>
+                <a href="huaiyod.html"><img id="huaiyod" src="no rain.jpg" width="40" height="40"></a>
+            </div>
+            <div class="sikao">
+                <a href="sikao.html"><b>Sikao</b></a>
+                <a href="sikao.html"><img id="sikao" src="no rain.jpg" width="40" height="40"></a>
+            </div>
+            <div class="nayong">
+                <a href="nayong.html"><b>Nayong</b></a>
+                <a href="nayong.html"><img id="nayong" src="no rain.jpg" width="40" height="40"></a>
+            </div>
+            <div class="yantakhao">
+                <a href="yantakhao.html"><b>Yantakhao</b></a>
+                <a href="yantakhao.html"><img id="yantakhao" src="no rain.jpg" width="40" height="40"></a>
+            </div>
+            <div class="kantrang">
+                <a href="kantrang.html"><b>Kantrang</b></a>
+                <a href="kantrang.html"><img id="kantrang" src="no rain.jpg" width="40" height="40"></a>
+            </div>
+            <div class="hatsamran">
+                <a href="hatsamran.html"><b>Hatsamran</b></a>
+                <a href="hatsamran.html"><img id="hatsamran" src="no rain.jpg" width="40" height="40"></a>
+            </div>
+            <div class="palian">
+                <a href="palian.html"><b>Palian</b></a>
+                <a href="palian.html"><img id="palian" src="no rain.jpg" width="40" height="40"></a>
+            </div>
+        </div>
+    </div>
+
+     <section>
+        <div class="container">
+            <div class="tab">
+                <img src="img/no rain.jpg" alt="" class="logo2">
+                <img src="img/light rain.jpg" alt="" class="logo2">
+                <img src="img/mod rain.jpg" alt="" class="logo2">
+                <img src="img/slihea rain.jpg" alt="" class="logo2">
+                <img src="img/heavy rain.jpg" alt="" class="logo2">
+            </div>
+            <table style="width:100%; font-size: 10px;">
+                <tr style="text-align: center;">
+                    <td><h2 style="margin-right: 40%;">No rain</h2></td>
+                    <td><h2>Light rain</h2></td>
+                    <td><h2>Moderate <br>rain</h2></td>
+                    <td><h2 style="margin-right: 17%;">Slightly <br>heavy rain</h2></td>
+                    <td><h2>Heavy <br>rain</h2></td>
+                </tr>
+            </table>
+                
+                
+                
+                
+        </div>
+     </section>
+     <script>
+
+        var today = new Date();
+    var nmon = (today.getMonth() + 1);
+    var ndate = today.getDate();
+    var nhour = today.getHours();
+    var nsec = today.getSeconds();
+    var nmin = (today.getMinutes() - 20);
+    if(nmin<0){nhour = nhour-1;
+    nmin = 60+nmin;}
+    var date = today.getFullYear() + '-' + nmon.toString().padStart(2, '0') + '-' + ndate.toString().padStart(2, '0');
+    var time = nhour.toString().padStart(2, '0') + ":" + nmin.toString().padStart(2, '0') + ":" + nsec.toString().padStart(2, '0');
+    var dateTime = date + ' ' + time;
+
+    const option = {
+      method: 'GET',
+      headers: { 'User-Agent': 'insomnia/8.3.0' }
+    };
+
+    const url = new URL('https://playground.kid-bright.org/api/data_table_wide');
+    url.searchParams.append('stations', '240AC4AADE1C');
+    url.searchParams.append('format', 'series');
+    url.searchParams.append('start', dateTime);
+    url.searchParams.append('end', '2024-11-19 00:00:00');
+    url.searchParams.append('freq', '10mins');
+
+    fetch(url.toString(), option)
+      .then(response => response.json())
+      .then(data => {
+        if(data.data[0][6] === 0){
+        document.getElementById("mueang").src = "img/no rain.jpg";
+
+        }
+        else if(data.data[0][6] > 0 && data.data[0][6] <= 10){
+        document.getElementById("mueang").src = "img/light rain.jpg";
+
+        }
+
+        else if(data.data[0][6] > 10 && data.data[0][6] <= 35){
+        document.getElementById("mueang").src = "img/mod rain.jpg";
+
+        }
+        else if(data.data[0][6] > 35 && data.data[0][6] <= 90){
+        document.getElementById("mueang").src = "img/slihea rain.jpg";
+
+        }
+        else{
+            document.getElementById("mueang").src = "img/heavy rain.jpg";
+        }
+})
+
+        document.getElementById("ratsada").src = "img/no rain.jpg";
+        document.getElementById("wangwiset").src = "img/no rain.jpg";
+        document.getElementById("huaiyod").src = "img/no rain.jpg";
+        document.getElementById("sikao").src = "img/no rain.jpg";
+        document.getElementById("kantrang").src = "img/no rain.jpg";
+        document.getElementById("yantakhao").src = "img/no rain.jpg";
+        document.getElementById("nayong").src = "img/no rain.jpg";
+        document.getElementById("hatsamran").src = "img/no rain.jpg";
+        document.getElementById("palian").src = "img/no rain.jpg";
+        document.getElementById("day").innerHTML = today.getDate(); 
+        document.getElementById("month").innerHTML = today.getMonth()+1;
+        document.getElementById("year").innerHTML = today.getFullYear();
+        </script>
+    
+</body>
+</html>

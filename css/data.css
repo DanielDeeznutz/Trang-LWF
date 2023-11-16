@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.back {
+    background: red; /* For browsers that do not support gradients */
+    background: -webkit-radial-gradient(circle, red, yellow, green); /* Safari */
+    background: -o-radial-gradient(circle, red, yellow, green); /* Opera 11.6 to 12.0 */
+    background: -moz-radial-gradient(circle, red, yellow, green); /* Firefox 3.6 to 15 */
+    background: radial-gradient(circle, red, yellow, green); /* Standard syntax */
+  }
+  
+.container {
+    max-width: 1110px;
+    margin: 0 auto;
+}
+
+nav {
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+nav ul {
+    border-radius: 25px;
+    background: white;
+    padding: 20px;
+    width: 200px;
+    height: 70px;
+    list-style: none;
+    margin-left: 20px;
+    margin-top: 10px;
+    text-align: center;
+    
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    margin-top: 25px;
+    margin-right: 20px;
+}
+
+.tabe {
+    background-color: gray;
+    margin: 5px;
+    height: 300px;
+}
+
+table , th, td{
+    margin-top: 20px;
+    border:1px solid black;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    background-color: white;
+}
+
+th {
+    width: 90px;
+}

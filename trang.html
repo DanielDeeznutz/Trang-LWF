@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mueang Trang</title>
+
+    <link rel="stylesheet" href="css/data.css">
+    <link rel="stylesheet" href="css/mueangtrang.css">
+</head>
+<body class="back">
+
+    <header>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><h1>Mueang Trang</h1></li>
+                </ul>
+
+                <a href="index.html"><img src="img/Vector.svg" alt="" class="logo"></a>
+                
+            </nav>
+
+            <div style="overflow-y:auto;" class="tabe">
+                <table id="dataTable" style="width:100%;">
+                  <thead>
+                    <tr>
+                      <th>Data</th>
+                      <th>Temperature</th>
+                      <th>Rainfall</th>
+                      <th>Humidity</th>
+                      <th>Wind Speed</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  </tbody>
+               </table>
+              </div>
+        </div>
+        <script>
+
+var today = new Date();
+    var nmon = (today.getMonth() + 1);
+    var ndate = today.getDate();
+    var nhour = today.getHours();
+    var nsec = today.getSeconds();
+    var nmin = (today.getMinutes() - 20);
+    if(nmin<0){nhour = nhour-1;
+    nmin = 60+nmin;}
+    var date = today.getFullYear() + '-' + nmon.toString().padStart(2, '0') + '-' + ndate.toString().padStart(2, '0');
+    var time = nhour.toString().padStart(2, '0') + ":" + nmin.toString().padStart(2, '0') + ":" + nsec.toString().padStart(2, '0');
+    var dateTime = date + ' ' + time;
+    const tableBody = document.getElementById('dataTable').getElementsByTagName('tbody')[0];
+
+    const option = {
+      method: 'GET',
+      headers: { 'User-Agent': 'insomnia/8.3.0' }
+    };
+
+    const url = new URL('https://playground.kid-bright.org/api/data_table_wide');
+    url.searchParams.append('stations', '240AC4AADE1C');
+    url.searchParams.append('format', 'series');
+    url.searchParams.append('start', dateTime);
+    url.searchParams.append('end', '2024-11-19 00:00:00');
+    url.searchParams.append('freq', '10mins');
+
+    fetch(url.toString(), option)
+      .then(response => response.json())
+      .then(data => {
+
+  data.data.forEach(item => {
+    const row = tableBody.insertRow();
+
+    row.insertCell().innerText = "now";
+    row.insertCell().innerText = item[7];
+    row.insertCell().innerText = item[6];
+    row.insertCell().innerText = item[2];
+    row.insertCell().innerText = item[9];
+    
+  });
+})
+      .catch(error => {
+        console.error('Error fetching data:', error);
+      });
+
+
+          const apiLink = 'https://script.google.com/macros/s/AKfycbwvG6ldXAIBLLLQl74cdeqAr4q0sUeECjU-Ih6oti5x6S00tv0DSYoQmDravDKQAOYi8w/exec?action=getUsers';
+
+fetch(apiLink)
+  .then(response => response.json())
+  .then(data => {
+     
+
+    data.forEach(item => {
+      const row = tableBody.insertRow();
+
+      row.insertCell().innerText = "next " + item.data;
+      row.insertCell().innerText = item.temp;
+      row.insertCell().innerText = item.rainfall;
+      row.insertCell().innerText = item.humid;
+      row.insertCell().innerText = item.windspeed;
+    });
+  })
+  .catch(error => console.error('Error:', error));
+
+
+          d = new Date();
+    
+        document.getElementById("aa").innerHTML = d.getHours();
+        document.getElementById("aaa").innerHTML = d.getMinutes();
+        document.getElementById("aaaa").innerHTML = d.getSeconds();
+
+        
+          </script>
+    </header>
+    
+</body>
+</html>

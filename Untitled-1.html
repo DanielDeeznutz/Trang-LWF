@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <table id="data-table">
+    <thead>
+      <tr>
+        <th>sss</th>
+        <th>humid</th>
+        <th>rainfall</th>
+        <th>temp</th>
+        <th>wind_direct</th>
+        <th>wind_speed</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+
+  <p id="aa"></p>
+  <script>
+    var today = new Date();
+    var nmon = (today.getMonth() + 1);
+    var ndate = today.getDate();
+    var nhour = today.getHours();
+    var nsec = today.getSeconds();
+    var nmin = (today.getMinutes() - 20);
+    if(nmin<0){nhour = nhour-1;
+    nmin = 60+nmin;}
+    var date = today.getFullYear() + '-' + nmon.toString().padStart(2, '0') + '-' + ndate.toString().padStart(2, '0');
+    var time = nhour.toString().padStart(2, '0') + ":" + nmin.toString().padStart(2, '0') + ":" + nsec.toString().padStart(2, '0');
+    var dateTime = date + ' ' + time;
+
+    const option = {
+      method: 'GET',
+      headers: { 'User-Agent': 'insomnia/8.3.0' }
+    };
+
+    const url = new URL('https://playground.kid-bright.org/api/data_table_wide');
+    url.searchParams.append('stations', '240AC4AADE1C');
+    url.searchParams.append('format', 'series');
+    url.searchParams.append('start', dateTime);
+    url.searchParams.append('end', '2023-11-19 00:00:00');
+    url.searchParams.append('freq', '10mins');
+
+    fetch(url.toString(), option)
+      .then(response => response.json())
+      .then(data => {
+  const table = document.getElementById('data-table');
+  const tableBody = table.getElementsByTagName('tbody')[0];
+
+  data.data.forEach(item => {
+    const row = tableBody.insertRow();
+
+    row.insertCell().innerText = "now";
+    row.insertCell().innerText = item[7];
+    row.insertCell().innerText = item[6];
+    row.insertCell().innerText = item[2];
+    row.insertCell().innerText = item[9];
+    row.insertCell().innerText = item[8];
+    
+  });
+})
+      .catch(error => {
+        console.error('Error fetching data:', error);
+      });
+
+    document.getElementById("aa").innerHTML = url.toString();
+  </script>
+</body>
+</html>
