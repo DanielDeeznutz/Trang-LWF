@@ -12,7 +12,7 @@
 <body class="back">
 
     <header>
-        <div class="containerss">
+        <div class="container">
             <nav>
                 <ul>
                     <li><h1>Huai Yod</h1></li>
@@ -21,8 +21,8 @@
                 <a href="index.html"><img src="img/Vector.svg" alt="" class="logo"></a>
                 
             </nav>
-                
-        </div>
+          </div>
+          <p id="ssss"></p>
 
             <!-- Begin Page Content -->
             <div class="container-fluid">
@@ -39,7 +39,7 @@
                                   <div class="col mr-2">
                                       <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                           Humidity(%)</div>
-                                      <div class="h5 mb-0 font-weight-bold text-gray-800"><p id="humid"></p></div>
+                                      <h2 style="color: black;"><p id="humid"></p></h2>
                                   </div>
                                   <div class="col-auto">
                                       <img src="img/humid.svg" alt="" style="height: 2.5rem; width: auto;">
@@ -57,7 +57,7 @@
                                   <div class="col mr-2">
                                       <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                           Temperature(°C)</div>
-                                      <div class="h5 mb-0 font-weight-bold text-gray-800"><p id="temp"></p></div>
+                                      <h2 style="color: black;"><p id="temp"></p></h2>
                                   </div>
                                   <div class="col-auto">
                                       <img src="img/temp.svg" alt="" style="height: 2.5rem; width: auto;">
@@ -77,7 +77,7 @@
                                       </div>
                                       <div class="row no-gutters align-items-center">
                                           <div class="col-auto">
-                                              <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><p id="prec"></p></div>
+                                              <h2 style="color: black;"><p id="prec"></p></h2>
                                           </div>
                                       </div>
                                   </div>
@@ -97,7 +97,7 @@
                                   <div class="col mr-2">
                                       <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
                                           Activity</div>
-                                      <div class="h5 mb-0 font-weight-bold text-gray-800"><p id="tudyang"></p></div>
+                                      <h4 style="color: black;"><p id="tudyang"></p></h4>
                                   </div>
                                   <div class="col-auto">
                                       <img src="img/um.svg" alt="" style="height: 2.5rem; width: auto;">
@@ -107,20 +107,23 @@
                       </div>
                   </div>
               </div>
-
-              
-              
-                      
-                  </div>
-
-                      <!-- Approach -->
-                  
-
-                  </div>
-              </div>
-
-          </div>
-          <!-- /.container-fluid -->
+              <script>
+                var apiKey = '32c8daffb28143a425c10fd482d03c27';
+                var cityName = "Huai Yot,th"
+                var url = 'https://api.openweathermap.org/data/2.5/weather?q=' + cityName + '&APPID=' + apiKey;
+            
+                fetch(url)
+                  .then(response => response.json())
+                  .then(data => {
+        
+        
+                    document.getElementById("temp").innerHTML = Math.round(data.main.temp-273)+ " °C";
+                    document.getElementById("humid").innerHTML = data.main.humidity + " %";
+                    document.getElementById("prec").innerHTML = data.weather[0].description;
+                    document.getElementById("tudyang").innerHTML = "You can tapping a rubber at 3.00 a.m.";
+        
+            })
+        </script>
     </header>
     
 </body>
