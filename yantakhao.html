@@ -5,52 +5,125 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yantakhao</title>
 
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/data.css">
     <link rel="stylesheet" href="css/yantakhao.css">
 </head>
 <body class="back">
 
-    <header>
-        <div class="container">
-            <nav>
-                <ul>
-                    <li><h1>Yantakhao</h1></li>
-                </ul>
+  <header>
+    <div class="container">
+        <nav>
+            <ul>
+                <li><h1>Yantakhao</h1></li>
+            </ul>
 
-                <a href="index.html"><img src="img/Vector.svg" alt="" class="logo"></a>
-                
-            </nav>
+            <a href="index.html"><img src="img/Vector.svg" alt="" class="logo"></a>
+            
+        </nav>
+      </div>
 
-            <div style="overflow-x:auto;" class="tabe">
-                <table style="width:100%;">
-                  <tr>
-                    <th>Time</th>
-                    <td>555</td>
-                    <td>6565</td>
-                    <td>555</td>
-                  </tr>
-                  <tr>
-                    <th>Temp</th>
-                    <td>555</td>
-                    <td>6565</td>
-                    <td>555</td>
-                  </tr>
-                  <tr>
-                    <th>Humid</th>
-                    <td>555</td>
-                    <td>6565</td>
-                    <td>555</td>
-                  </tr>
-                  <tr>
-                    <th>Prec</th>
-                    <td>555</td>
-                    <td>6565</td>
-                    <td>555</td>
-                  </tr>
-                </table>
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+
+          <!-- Content Row -->
+          <div class="row">
+
+              <!-- Earnings (Monthly) Card Example -->
+              <div class="col-xl-3 col-md-6 mb-4">
+                  <div class="card border-left-primary shadow h-100 py-2">
+                      <div class="card-body">
+                          <div class="row no-gutters align-items-center">
+                              <div class="col mr-2">
+                                  <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                      Humidity(%)</div>
+                                  <h2 style="color: black;"><p id="humid"></p></h2>
+                              </div>
+                              <div class="col-auto">
+                                  <img src="img/humid.svg" alt="" style="height: 2.5rem; width: auto;">
+                              </div>
+                          </div>
+                      </div>
+                  </div>
               </div>
-        </div>
-    </header>
+
+              <!-- Earnings (Monthly) Card Example -->
+              <div class="col-xl-3 col-md-6 mb-4">
+                  <div class="card border-left-success shadow h-100 py-2">
+                      <div class="card-body">
+                          <div class="row no-gutters align-items-center">
+                              <div class="col mr-2">
+                                  <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                      Temperature(°C)</div>
+                                  <h2 style="color: black;"><p id="temp"></p></h2>
+                              </div>
+                              <div class="col-auto">
+                                  <img src="img/temp.svg" alt="" style="height: 2.5rem; width: auto;">
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+              <!-- Earnings (Monthly) Card Example -->
+              <div class="col-xl-3 col-md-6 mb-4">
+                  <div class="card border-left-info shadow h-100 py-2">
+                      <div class="card-body">
+                          <div class="row no-gutters align-items-center">
+                              <div class="col mr-2">
+                                  <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Precipitation
+                                  </div>
+                                  <div class="row no-gutters align-items-center">
+                                      <div class="col-auto">
+                                          <h2 style="color: black;"><p id="prec"></p></h2>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="col-auto">
+                                  <img src="img/prec.svg" alt="" style="height: 2.5rem; width: auto;">
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+              <!-- Pending Requests Card Example -->
+              <div class="col-xl-3 col-md-6 mb-4">
+                  <div class="card border-left-warning shadow h-100 py-2">
+                      <div class="card-body">
+                          <div class="row no-gutters align-items-center">
+                              <div class="col mr-2">
+                                  <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                      Activity</div>
+                                  <h4 style="color: black;"><p id="tudyang"></p></h4>
+                              </div>
+                              <div class="col-auto">
+                                  <img src="img/um.svg" alt="" style="height: 2.5rem; width: auto;">
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <script>
+            var apiKey = '32c8daffb28143a425c10fd482d03c27';
+            var cityName = "Yan Ta Khao,th"
+            var url = 'https://api.openweathermap.org/data/2.5/weather?q=' + cityName + '&APPID=' + apiKey;
+        
+            fetch(url)
+              .then(response => response.json())
+              .then(data => {
+    
+    
+                document.getElementById("temp").innerHTML = Math.round(data.main.temp-273)+ " °C";
+                document.getElementById("humid").innerHTML = data.main.humidity + " %";
+                document.getElementById("prec").innerHTML = data.weather[0].description;
+                document.getElementById("tudyang").innerHTML = "You can tapping a rubber at 3.00 a.m.";
+    
+        })
+    </script>
+</header>
     
 </body>
 </html>
