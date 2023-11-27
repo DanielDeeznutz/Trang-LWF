@@ -147,15 +147,265 @@
         }
 })
 
-        document.getElementById("ratsada").src = "img/no rain.png";
-        document.getElementById("wangwiset").src = "img/no rain.png";
-        document.getElementById("huaiyod").src = "img/no rain.png";
-        document.getElementById("sikao").src = "img/no rain.png";
-        document.getElementById("kantrang").src = "img/no rain.png";
-        document.getElementById("yantakhao").src = "img/no rain.png";
+        var apiKey = '32c8daffb28143a425c10fd482d03c27';
+            var cityName = "Hat Samran,th"
+            urll = 'https://api.openweathermap.org/data/2.5/weather?q=' + cityName + '&APPID=' + apiKey;
+        
+            fetch(urll)
+              .then(response => response.json())
+              .then(data => {
+    
+    
+                if(data.weather[0].description === "overcast clouds"){
+                document.getElementById("hatsamran").src = "img/no rain.png";
+
+                }
+                else if(data.weather[0].description === "light rain"){
+                document.getElementById("hatsamran").src = "img/light rain.png";
+
+                }
+
+                else if(data.weather[0].description === "moderate rain"){
+                document.getElementById("hatsamran").src = "img/mod rain.png";
+                
+                }
+                else if(data.data[0][6] > 35 && data.data[0][6] <= 90){
+                document.getElementById("hatsamran").src = "img/slihea rain.png";
+
+                }
+                else{
+                    document.getElementById("hatsamran").src = "img/heavy rain.png";
+                }
+    
+        })
+
+        var apiKey = '32c8daffb28143a425c10fd482d03c27';
+            var cityName = "Ratsada,th"
+            urll = 'https://api.openweathermap.org/data/2.5/weather?q=' + cityName + '&APPID=' + apiKey;
+        
+            fetch(urll)
+              .then(response => response.json())
+              .then(data => {
+    
+    
+                if(data.weather[0].description === "overcast clouds"){
+                document.getElementById("ratsada").src = "img/no rain.png";
+
+                }
+                else if(data.weather[0].description === "light rain"){
+                document.getElementById("ratsada").src = "img/light rain.png";
+
+                }
+
+                else if(data.weather[0].description === "moderate rain"){
+                document.getElementById("ratsada").src = "img/mod rain.png";
+                
+                }
+                else if(data.data[0][6] > 35 && data.data[0][6] <= 90){
+                document.getElementById("ratsada").src = "img/slihea rain.png";
+
+                }
+                else{
+                    document.getElementById("ratsada").src = "img/heavy rain.png";
+                }
+    
+        })
+
+        var apiKey = '32c8daffb28143a425c10fd482d03c27';
+            var cityName = "Wang Wiset,th"
+            urll = 'https://api.openweathermap.org/data/2.5/weather?q=' + cityName + '&APPID=' + apiKey;
+        
+            fetch(urll)
+              .then(response => response.json())
+              .then(data => {
+    
+    
+                if(data.weather[0].description === "overcast clouds"){
+                document.getElementById("wangwiset").src = "img/no rain.png";
+
+                }
+                else if(data.weather[0].description === "light rain"){
+                document.getElementById("wangwiset").src = "img/light rain.png";
+
+                }
+
+                else if(data.weather[0].description === "moderate rain"){
+                document.getElementById("wangwiset").src = "img/mod rain.png";
+                
+                }
+                else if(data.data[0][6] > 35 && data.data[0][6] <= 90){
+                document.getElementById("wangwiset").src = "img/slihea rain.png";
+
+                }
+                else{
+                    document.getElementById("wangwiset").src = "img/heavy rain.png";
+                }
+    
+        })
+
+        var apiKey = '32c8daffb28143a425c10fd482d03c27';
+            var cityName = "Huai Yot,th"
+            urll = 'https://api.openweathermap.org/data/2.5/weather?q=' + cityName + '&APPID=' + apiKey;
+        
+            fetch(urll)
+              .then(response => response.json())
+              .then(data => {
+    
+    
+                if(data.weather[0].description === "overcast clouds"){
+                document.getElementById("huaiyod").src = "img/no rain.png";
+
+                }
+                else if(data.weather[0].description === "light rain"){
+                document.getElementById("huaiyod").src = "img/light rain.png";
+
+                }
+
+                else if(data.weather[0].description === "moderate rain"){
+                document.getElementById("huaiyod").src = "img/mod rain.png";
+                
+                }
+                else if(data.data[0][6] > 35 && data.data[0][6] <= 90){
+                document.getElementById("huaiyod").src = "img/slihea rain.png";
+
+                }
+                else{
+                    document.getElementById("huaiyod").src = "img/heavy rain.png";
+                }
+    
+        })
+
+        var apiKey = '32c8daffb28143a425c10fd482d03c27';
+            var cityName = "Sikao,th"
+            urll = 'https://api.openweathermap.org/data/2.5/weather?q=' + cityName + '&APPID=' + apiKey;
+        
+            fetch(urll)
+              .then(response => response.json())
+              .then(data => {
+    
+    
+                if(data.weather[0].description === "overcast clouds"){
+                document.getElementById("sikao").src = "img/no rain.png";
+
+                }
+                else if(data.weather[0].description === "light rain"){
+                document.getElementById("sikao").src = "img/light rain.png";
+
+                }
+
+                else if(data.weather[0].description === "moderate rain"){
+                document.getElementById("sikao").src = "img/mod rain.png";
+                
+                }
+                else if(data.data[0][6] > 35 && data.data[0][6] <= 90){
+                document.getElementById("sikao").src = "img/slihea rain.png";
+
+                }
+                else{
+                    document.getElementById("sikao").src = "img/heavy rain.png";
+                }
+    
+        })
+
+        var apiKey = '32c8daffb28143a425c10fd482d03c27';
+            var cityName = "Kantang,th"
+            urll = 'https://api.openweathermap.org/data/2.5/weather?q=' + cityName + '&APPID=' + apiKey;
+        
+            fetch(urll)
+              .then(response => response.json())
+              .then(data => {
+    
+    
+                if(data.weather[0].description === "overcast clouds"){
+                document.getElementById("kantrang").src = "img/no rain.png";
+
+                }
+                else if(data.weather[0].description === "light rain"){
+                document.getElementById("kantrang").src = "img/light rain.png";
+
+                }
+
+                else if(data.weather[0].description === "moderate rain"){
+                document.getElementById("kantrang").src = "img/mod rain.png";
+                
+                }
+                else if(data.data[0][6] > 35 && data.data[0][6] <= 90){
+                document.getElementById("kantrang").src = "img/slihea rain.png";
+
+                }
+                else{
+                    document.getElementById("kantrang").src = "img/heavy rain.png";
+                }
+    
+        })
+
+        var apiKey = '32c8daffb28143a425c10fd482d03c27';
+            var cityName = "Yan Ta Khao,th"
+            urll = 'https://api.openweathermap.org/data/2.5/weather?q=' + cityName + '&APPID=' + apiKey;
+        
+            fetch(urll)
+              .then(response => response.json())
+              .then(data => {
+    
+    
+                if(data.weather[0].description === "overcast clouds"){
+                document.getElementById("yantakhao").src = "img/no rain.png";
+
+                }
+                else if(data.weather[0].description === "light rain"){
+                document.getElementById("yantakhao").src = "img/light rain.png";
+
+                }
+
+                else if(data.weather[0].description === "moderate rain"){
+                document.getElementById("yantakhao").src = "img/mod rain.png";
+                
+                }
+                else if(data.data[0][6] > 35 && data.data[0][6] <= 90){
+                document.getElementById("yantakhao").src = "img/slihea rain.png";
+
+                }
+                else{
+                    document.getElementById("yantakhao").src = "img/heavy rain.png";
+                }
+    
+        })
+
+        var apiKey = '32c8daffb28143a425c10fd482d03c27';
+            var cityName = "Palian,th"
+            urll = 'https://api.openweathermap.org/data/2.5/weather?q=' + cityName + '&APPID=' + apiKey;
+        
+            fetch(urll)
+              .then(response => response.json())
+              .then(data => {
+    
+    
+                if(data.weather[0].description === "overcast clouds"){
+                document.getElementById("palian").src = "img/no rain.png";
+
+                }
+                else if(data.weather[0].description === "light rain"){
+                document.getElementById("palian").src = "img/light rain.png";
+
+                }
+
+                else if(data.weather[0].description === "moderate rain"){
+                document.getElementById("palian").src = "img/mod rain.png";
+                
+                }
+                else if(data.data[0][6] > 35 && data.data[0][6] <= 90){
+                document.getElementById("palian").src = "img/slihea rain.png";
+
+                }
+                else{
+                    document.getElementById("palian").src = "img/heavy rain.png";
+                }
+    
+        })
+
+
+
         document.getElementById("nayong").src = "img/no rain.png";
-        document.getElementById("hatsamran").src = "img/no rain.png";
-        document.getElementById("palian").src = "img/no rain.png";
         document.getElementById("day").innerHTML = today.getDate(); 
         document.getElementById("month").innerHTML = today.getMonth()+1;
         document.getElementById("year").innerHTML = today.getFullYear();
