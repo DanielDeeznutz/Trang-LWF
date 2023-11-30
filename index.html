@@ -129,6 +129,10 @@
         document.getElementById("mueang").src = "img/no rain.png";
 
         }
+        else if(data.weather[0].description === "few clouds"){
+                document.getElementById("mueang").src = "img/no rain.png";
+
+            }
         else if(data.data[0][6] > 0 && data.data[0][6] <= 10){
         document.getElementById("mueang").src = "img/light rain.png";
 
@@ -165,6 +169,11 @@
 
                 }
 
+                else if(data.weather[0].description === "few clouds"){
+                document.getElementById("hatsamran").src = "img/no rain.png";
+
+                }
+
                 else if(data.weather[0].description === "moderate rain"){
                 document.getElementById("hatsamran").src = "img/mod rain.png";
                 
@@ -194,6 +203,10 @@
                 }
                 else if(data.weather[0].description === "light rain"){
                 document.getElementById("ratsada").src = "img/light rain.png";
+
+                }
+                else if(data.weather[0].description === "few clouds"){
+                document.getElementById("ratsada").src = "img/no rain.png";
 
                 }
 
@@ -228,6 +241,10 @@
                 document.getElementById("wangwiset").src = "img/light rain.png";
 
                 }
+                else if(data.weather[0].description === "few clouds"){
+                document.getElementById("wangwiset").src = "img/no rain.png";
+
+                }
 
                 else if(data.weather[0].description === "moderate rain"){
                 document.getElementById("wangwiset").src = "img/mod rain.png";
@@ -260,6 +277,10 @@
                 document.getElementById("huaiyod").src = "img/light rain.png";
 
                 }
+                else if(data.weather[0].description === "few clouds"){
+                document.getElementById("huaiyod").src = "img/no rain.png";
+
+                }
 
                 else if(data.weather[0].description === "moderate rain"){
                 document.getElementById("huaiyod").src = "img/mod rain.png";
@@ -285,6 +306,11 @@
     
     
                 if(data.weather[0].description === "overcast clouds"){
+                document.getElementById("sikao").src = "img/no rain.png";
+
+                }
+
+                else if(data.weather[0].description === "few clouds"){
                 document.getElementById("sikao").src = "img/no rain.png";
 
                 }
@@ -320,6 +346,10 @@
                 document.getElementById("kantrang").src = "img/no rain.png";
 
                 }
+                else if(data.weather[0].description === "few clouds"){
+                document.getElementById("kantrang").src = "img/no rain.png";
+
+                }
                 else if(data.weather[0].description === "light rain"){
                 document.getElementById("kantrang").src = "img/light rain.png";
 
@@ -352,6 +382,10 @@
                 document.getElementById("yantakhao").src = "img/no rain.png";
 
                 }
+                else if(data.weather[0].description === "few clouds"){
+                document.getElementById("yantakhao").src = "img/no rain.png";
+
+                }
                 else if(data.weather[0].description === "light rain"){
                 document.getElementById("yantakhao").src = "img/light rain.png";
 
@@ -381,6 +415,10 @@
     
     
                 if(data.weather[0].description === "overcast clouds"){
+                document.getElementById("palian").src = "img/no rain.png";
+
+                }
+                else if(data.weather[0].description === "few clouds"){
                 document.getElementById("palian").src = "img/no rain.png";
 
                 }
