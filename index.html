@@ -21,6 +21,8 @@
                 </div>
                 </ul>
 
+                <a href="https://liff.line.me/1645278921-kWRPP32q/?accountId=117ibefd"><img src="img/line.svg" alt="" class="logo3"></a>
+
                 <img src="img/icon.jpg" alt="" class="logo">
                 
             </nav>
@@ -129,10 +131,6 @@
         document.getElementById("mueang").src = "img/no rain.png";
 
         }
-        else if(data.weather[0].description === "few clouds"){
-                document.getElementById("mueang").src = "img/no rain.png";
-
-            }
         else if(data.data[0][6] > 0 && data.data[0][6] <= 10){
         document.getElementById("mueang").src = "img/light rain.png";
 
@@ -160,17 +158,8 @@
               .then(data => {
     
     
-                if(data.weather[0].description === "overcast clouds"){
-                document.getElementById("hatsamran").src = "img/no rain.png";
-
-                }
-                else if(data.weather[0].description === "light rain"){
+                if(data.weather[0].description === "light rain"){
                 document.getElementById("hatsamran").src = "img/light rain.png";
-
-                }
-
-                else if(data.weather[0].description === "few clouds"){
-                document.getElementById("hatsamran").src = "img/no rain.png";
 
                 }
 
@@ -178,12 +167,12 @@
                 document.getElementById("hatsamran").src = "img/mod rain.png";
                 
                 }
-                else if(data.data[0][6] > 35 && data.data[0][6] <= 90){
+                else if(data.weather[0].description === "heavy rain"){
                 document.getElementById("hatsamran").src = "img/slihea rain.png";
 
                 }
                 else{
-                    document.getElementById("hatsamran").src = "img/heavy rain.png";
+                    document.getElementById("hatsamran").src = "img/no rain.png";
                 }
     
         })
@@ -197,16 +186,8 @@
               .then(data => {
     
     
-                if(data.weather[0].description === "overcast clouds"){
-                document.getElementById("ratsada").src = "img/no rain.png";
-
-                }
-                else if(data.weather[0].description === "light rain"){
+                if(data.weather[0].description === "light rain"){
                 document.getElementById("ratsada").src = "img/light rain.png";
-
-                }
-                else if(data.weather[0].description === "few clouds"){
-                document.getElementById("ratsada").src = "img/no rain.png";
 
                 }
 
@@ -214,12 +195,12 @@
                 document.getElementById("ratsada").src = "img/mod rain.png";
                 
                 }
-                else if(data.data[0][6] > 35 && data.data[0][6] <= 90){
+                else if(data.weather[0].description === "heavy rain"){
                 document.getElementById("ratsada").src = "img/slihea rain.png";
 
                 }
                 else{
-                    document.getElementById("ratsada").src = "img/heavy rain.png";
+                    document.getElementById("ratsada").src = "img/no rain.png";
                 }
     
         })
@@ -233,16 +214,8 @@
               .then(data => {
     
     
-                if(data.weather[0].description === "overcast clouds"){
-                document.getElementById("wangwiset").src = "img/no rain.png";
-
-                }
-                else if(data.weather[0].description === "light rain"){
+                if(data.weather[0].description === "light rain"){
                 document.getElementById("wangwiset").src = "img/light rain.png";
-
-                }
-                else if(data.weather[0].description === "few clouds"){
-                document.getElementById("wangwiset").src = "img/no rain.png";
 
                 }
 
@@ -250,12 +223,12 @@
                 document.getElementById("wangwiset").src = "img/mod rain.png";
                 
                 }
-                else if(data.data[0][6] > 35 && data.data[0][6] <= 90){
+                else if(data.weather[0].description === "heavy rain"){
                 document.getElementById("wangwiset").src = "img/slihea rain.png";
 
                 }
                 else{
-                    document.getElementById("wangwiset").src = "img/heavy rain.png";
+                    document.getElementById("wangwiset").src = "img/no rain.png";
                 }
     
         })
@@ -269,16 +242,8 @@
               .then(data => {
     
     
-                if(data.weather[0].description === "overcast clouds"){
-                document.getElementById("huaiyod").src = "img/no rain.png";
-
-                }
-                else if(data.weather[0].description === "light rain"){
+                if(data.weather[0].description === "light rain"){
                 document.getElementById("huaiyod").src = "img/light rain.png";
-
-                }
-                else if(data.weather[0].description === "few clouds"){
-                document.getElementById("huaiyod").src = "img/no rain.png";
 
                 }
 
@@ -286,12 +251,12 @@
                 document.getElementById("huaiyod").src = "img/mod rain.png";
                 
                 }
-                else if(data.data[0][6] > 35 && data.data[0][6] <= 90){
+                else if(data.weather[0].description === "heavy rain"){
                 document.getElementById("huaiyod").src = "img/slihea rain.png";
 
                 }
                 else{
-                    document.getElementById("huaiyod").src = "img/heavy rain.png";
+                    document.getElementById("huaiyod").src = "img/no rain.png";
                 }
     
         })
@@ -305,16 +270,7 @@
               .then(data => {
     
     
-                if(data.weather[0].description === "overcast clouds"){
-                document.getElementById("sikao").src = "img/no rain.png";
-
-                }
-
-                else if(data.weather[0].description === "few clouds"){
-                document.getElementById("sikao").src = "img/no rain.png";
-
-                }
-                else if(data.weather[0].description === "light rain"){
+                if(data.weather[0].description === "light rain"){
                 document.getElementById("sikao").src = "img/light rain.png";
 
                 }
@@ -323,12 +279,12 @@
                 document.getElementById("sikao").src = "img/mod rain.png";
                 
                 }
-                else if(data.data[0][6] > 35 && data.data[0][6] <= 90){
+                else if(data.weather[0].description === "heavy rain"){
                 document.getElementById("sikao").src = "img/slihea rain.png";
 
                 }
                 else{
-                    document.getElementById("sikao").src = "img/heavy rain.png";
+                    document.getElementById("sikao").src = "img/no rain.png";
                 }
     
         })
@@ -342,15 +298,7 @@
               .then(data => {
     
     
-                if(data.weather[0].description === "overcast clouds"){
-                document.getElementById("kantrang").src = "img/no rain.png";
-
-                }
-                else if(data.weather[0].description === "few clouds"){
-                document.getElementById("kantrang").src = "img/no rain.png";
-
-                }
-                else if(data.weather[0].description === "light rain"){
+                if(data.weather[0].description === "light rain"){
                 document.getElementById("kantrang").src = "img/light rain.png";
 
                 }
@@ -359,12 +307,12 @@
                 document.getElementById("kantrang").src = "img/mod rain.png";
                 
                 }
-                else if(data.data[0][6] > 35 && data.data[0][6] <= 90){
+                else if(data.weather[0].description === "heavy rain"){
                 document.getElementById("kantrang").src = "img/slihea rain.png";
 
                 }
                 else{
-                    document.getElementById("kantrang").src = "img/heavy rain.png";
+                    document.getElementById("kantrang").src = "img/no rain.png";
                 }
     
         })
@@ -378,15 +326,7 @@
               .then(data => {
     
     
-                if(data.weather[0].description === "overcast clouds"){
-                document.getElementById("yantakhao").src = "img/no rain.png";
-
-                }
-                else if(data.weather[0].description === "few clouds"){
-                document.getElementById("yantakhao").src = "img/no rain.png";
-
-                }
-                else if(data.weather[0].description === "light rain"){
+                if(data.weather[0].description === "light rain"){
                 document.getElementById("yantakhao").src = "img/light rain.png";
 
                 }
@@ -395,12 +335,12 @@
                 document.getElementById("yantakhao").src = "img/mod rain.png";
                 
                 }
-                else if(data.data[0][6] > 35 && data.data[0][6] <= 90){
+                else if(data.weather[0].description === "heavy rain"){
                 document.getElementById("yantakhao").src = "img/slihea rain.png";
 
                 }
                 else{
-                    document.getElementById("yantakhao").src = "img/heavy rain.png";
+                    document.getElementById("yantakhao").src = "img/no rain.png";
                 }
     
         })
@@ -414,15 +354,7 @@
               .then(data => {
     
     
-                if(data.weather[0].description === "overcast clouds"){
-                document.getElementById("palian").src = "img/no rain.png";
-
-                }
-                else if(data.weather[0].description === "few clouds"){
-                document.getElementById("palian").src = "img/no rain.png";
-
-                }
-                else if(data.weather[0].description === "light rain"){
+                if(data.weather[0].description === "light rain"){
                 document.getElementById("palian").src = "img/light rain.png";
 
                 }
@@ -431,12 +363,12 @@
                 document.getElementById("palian").src = "img/mod rain.png";
                 
                 }
-                else if(data.data[0][6] > 35 && data.data[0][6] <= 90){
+                else if(data.weather[0].description === "heavy rain"){
                 document.getElementById("palian").src = "img/slihea rain.png";
 
                 }
                 else{
-                    document.getElementById("palian").src = "img/heavy rain.png";
+                    document.getElementById("palian").src = "img/no rain.png";
                 }
     
         })
